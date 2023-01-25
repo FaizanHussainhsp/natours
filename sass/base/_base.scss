@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; //10 px ,1em=10px
+
+  @include repond(tab-land) {
+    font-size: 56.25%; //11.2 px 1em=9px
+  }
+  @include repond(tab-port) {
+    font-size: 50%; //8px 1em=8px
+  }
+  @include repond(phone) {
+    font-size: 30%; //8px 1em=8px
+  }
+
+  @include repond(desktop) {
+    font-size: 75%; //12.8 px 1em=12px
+  }
+}
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: $color-gray-dark;
+  line-height: 1.7;
+  padding: 3rem;
+  @include repond(tab-port) {
+    padding: 0rem;
+  }
+  &::selection {
+    background-color: $primary-dark;
+    color: #fff;
+  }
+}

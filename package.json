@@ -1,0 +1,24 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "landing page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "convertallcode:sass": "node-sass sass/main.scss css/allcodestyle.css",
+    "combine:css": "concat -o css/combinecode.css css/allcodestyle.css css/icon-font.css",
+    "autoprefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/combinecode.css -o css/afterprefix.css",
+    "finalcompress:css": "node-sass css/afterprefix.css css/doublestyle.css --output-style compressed",
+    "build:css": "npm-run-all convertallcode:sass combine:css autoprefix:css finalcompress:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^8.0.0",
+    "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13"
+  }
+}
